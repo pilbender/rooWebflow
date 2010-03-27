@@ -1,0 +1,32 @@
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-26 12:41:19
+project --topLevelPackage net.raescott
+hint
+persistence setup --databaseName scott --provider HIBERNATE --database MYSQL 
+hint
+entity --class Person
+quit
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-26 12:55:19
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-26 12:56:26
+// [failed] controller class --class net.raescott.Person
+web flow 
+hint
+q
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-26 13:32:52
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-26 13:49:59
+hint
+field string --fieldName name --class net.raescott.Person
+field date --fieldName birthDate --type java.util.Date 
+// [failed] interface --class net.raescott.Person 
+hint 
+hint
+controller all --package net.raescott.controllers 
+quit
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-26 15:45:02
+// Spring Roo 1.0.2.RELEASE [rev 638] log opened at 2010-03-26 15:50:18
+entity --class net.raescott.Pet 
+field string --fieldName name 
+// [failed] entity --class net.raescott.Person 
+field reference --fieldName pet --type net.raescott.Pet 
+controller all --package net.raescott.controllers
+quit
+// Spring Roo 1.0.2.RELEASE [rev 638] log closed at 2010-03-26 16:29:01

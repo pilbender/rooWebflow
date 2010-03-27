@@ -1,0 +1,35 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+<jsp:output omit-xml-declaration="yes"/>
+<script type="text/javascript">dojo.require('dijit.TitlePane');</script>
+<div id="_title_div">
+<spring:message code="label.person" var="entity_label"/>
+<spring:message arguments="${entity_label}" code="entity.show" var="title_msg"/>
+<script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
+<c:if test="${not empty person}">
+<div id="roo_person_name">
+<label for="_name_id">Name:</label>
+<div class="box" id="_name_id">
+<c:out value="${person.name}"/>
+</div>
+</div>
+<br/>
+<div id="roo_person_birthDate">
+<label for="_birthDate_id">Birth Date:</label>
+<div class="box" id="_birthDate_id">
+<fmt:formatDate pattern="${person_birthDate_date_format}" value="${person.birthDate}"/>
+</div>
+</div>
+<br/>
+<div id="roo_person_pet">
+<label for="_pet_id">Pet:</label>
+<div class="box" id="_pet_id">
+<c:out value="${person.pet}"/>
+</div>
+</div>
+<br/>
+</c:if>
+<c:if test="${empty person}">
+<spring:message arguments="${entity_label}" code="entity.not.found.single"/>
+</c:if>
+</div>
+</div>
